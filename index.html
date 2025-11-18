@@ -6,32 +6,31 @@
   <meta name="viewport" content="width=, initial-scale=1.0">
   <title>Document</title>
 </head>
-<script>
+<body>
+  <script>
   function showtext() {
 //I am going to create a paragraph elkement
-  let p = document.createElement('p')
+    let p = document.createElement('p')
 //I am going to get the value from the 
-  let t =                           document.createTextNode(document.getElementById('usertext').value)
+    let t =                           document.createTextNode(document.getElementById('usertext').value)
 
 //the element AND the textnode cuyrrently are UMBOUND to ANYTHING on this website. They are just floating in space.
 
 //Now I take these floating unbound things and merge them. I am merging t (textnode) as a child of p (element). So in other words, p is adopting t.
-p.appendChild(t)
+  p.appendChild(t)
 //But still, p is floating in space holding hands with t. p needs to be bound to the document. So I repeat the process of 
-  document.body.appendChild(p)
-      document.getElementById('usertext').value = ""
+    document.body.appendChild(p)
+    document.getElementById('usertext').value = ""
 }
-
-function removetext() {
+  function removetext() {
   //get the first paragraph of the DOm and save it as removeItem
-  let removeItem = document.getElementsByTagName("p")[0]
+    let removeItem = document.getElementsByTagName("p")[0]
   //Find out who the parent is of removeItem and save it as containerElement
-  let containerElement = removeItem.parentNode
+    let containerElement = removeItem.parentNode
   //Now that I know hwo removeItem's mommy is, I will remove the child from the mother.
-        containerElement.removeChild(removeItem)
+      containerElement.removeChild(removeItem)
 }
 </script>
-<body>
   <!---
     1. Create an input field
     2. create a function that takes the input and adds it to the DOM using
