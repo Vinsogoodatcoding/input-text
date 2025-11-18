@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script>
+  function showtext() {
+//I am going to create a paragraph elkement
+  let p = document.createElement('p')
+//I am going to get the value from the 
+  let t =                           document.createTextNode(document.getElementById('usertext').value)
+
+//the element AND the textnode cuyrrently are UMBOUND to ANYTHING on this website. They are just floating in space.
+
+//Now I take these floating unbound things and merge them. I am merging t (textnode) as a child of p (element). So in other words, p is adopting t.
+p.appendChild(t)
+//But still, p is floating in space holding hands with t. p needs to be bound to the document. So I repeat the process of 
+  document.body.appendChild(p)
+      document.getElementById('usertext').value = ""
+}
+</script>
+<body>
+  <!---
+    1. Create an input field
+    2. create a function that takes the input and adds it to the DOM using
+        createElement
+        createTextNode
+        append textnode to element using appendChild
+        append element to document body using appendChild
+--->
+  <input id="usertext">
+  <button onclick="showtext()">Show Text</button>
+</body>
+</html>
