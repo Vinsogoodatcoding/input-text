@@ -21,6 +21,15 @@ p.appendChild(t)
   document.body.appendChild(p)
       document.getElementById('usertext').value = ""
 }
+
+function removetext() {
+  //get the first paragraph of the DOm and save it as removeItem
+  let removeItem = document.getElementsByTagName("p")[0]
+  //Find out who the parent is of removeItem and save it as containerElement
+  let containerElement = removeItem.parentNode
+  //Now that I know hwo removeItem's mommy is, I will remove the child from the mother.
+        containerElement.removeChild(removeItem)
+}
 </script>
 <body>
   <!---
